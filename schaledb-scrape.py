@@ -32,7 +32,7 @@ with open(json_file) as json_data:
 num_index = 10000
 
 with open("student-list.json", "w") as f:
-    f.write("[")
+    f.write("{")
 
 for x in enumerate(data):
     if num_index == 10112:
@@ -55,57 +55,59 @@ for x in enumerate(data):
     skill = x["Skills"]["Ex"]["Cost"][0]
     if num_index == 26014:
         with open("student-list.json", "a") as f:
-            f.write("{")
+            f.write('"' + name + '":')
+            f.write("{\n")
             f.write('"name":')
             f.write('"' + name + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"school":')
             f.write('"' + school + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"combatClass":')
             f.write('"' + combat + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"role":')
             f.write('"' + role + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"damageType":')
             f.write('"' + damage + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"armorType":')
             f.write('"' + armor + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"skill":')
             f.write('"' + str(skill) + '"')
-            f.write("}")
+            f.write("}\n")
     else:
         with open("student-list.json", "a") as f:
-            f.write("{")
+            f.write('"' + name + '":')
+            f.write("{\n")
             f.write('"name":')
             f.write('"' + name + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"school":')
             f.write('"' + school + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"combatClass":')
             f.write('"' + combat + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"role":')
             f.write('"' + role + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"damageType":')
             f.write('"' + damage + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"armorType":')
             f.write('"' + armor + '"')
-            f.write(",")
+            f.write(",\n")
             f.write('"skill":')
             f.write('"' + str(skill) + '"')
-            f.write("},")
+            f.write("},\n")
     num_index += 1
     
     if num_index == 26015:
         break
 
 with open("student-list.json", "a") as f:
-    f.write("]")
+    f.write("}")
     
