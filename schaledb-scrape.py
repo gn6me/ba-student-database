@@ -53,10 +53,14 @@ for x in enumerate(data):
     damage = x["BulletType"]
     armor = x["ArmorType"]
     skill = x["Skills"]["Ex"]["Cost"][0]
+    imgName = name.replace(" ", "_")
     if num_index == 26014:
         with open("student-list.json", "a") as f:
             f.write('"' + name + '":')
             f.write("{\n")
+            f.write('"img":')
+            f.write('"https://schalidle.vercel.app/imgs/' + imgName + '.png"')
+            f.write(",\n")
             f.write('"name":')
             f.write('"' + name + '"')
             f.write(",\n")
@@ -82,6 +86,9 @@ for x in enumerate(data):
         with open("student-list.json", "a") as f:
             f.write('"' + name + '":')
             f.write("{\n")
+            f.write('"img":')
+            f.write('"https://schalidle.vercel.app/imgs/' + imgName + '.png"')
+            f.write(",\n")
             f.write('"name":')
             f.write('"' + name + '"')
             f.write(",\n")
